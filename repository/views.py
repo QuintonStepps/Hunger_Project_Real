@@ -44,12 +44,3 @@ def download(request):
     documents = Document.objects.all()
     document = documents.get(name="TestDoc.pdf")
     
-  #  file_path = os.path.join(settings.MEDIA_ROOT, path)
-    file_path = '/documents/TestDoc.pdf'
-    if os.path.exists(file_path):
-        print("This far")
-        with open(file_path, 'rb') as fh:
-            response = HttpResponse(fh.read(), content_type="application/force-download")
-            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
-            return response
-    return render(request, 'repository/download.html')
