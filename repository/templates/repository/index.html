@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF</title>
+</head>
+<body>
+    <h1>Download PDF</h1>
+    <p>Click the link below to download the PDF file:</p>
+
+    <!-- Replace 'filename.pdf' with the actual filename -->
+    <ul>
+        {% for document in documents %}
+        <li>
+            <span class="document-item">
+                {{ document.name }}
+                <button onclick="window.location.href='/media/{{ document.docfile }}'">Download</button>
+            </span>
+        </li>
+    {% endfor %}
+    
+    <style>
+        .document-item {
+            display: flex;
+            align-items: center; 
+        }
+    
+        .document-item a {
+            margin-right: 30px; 
+        }
+    
+        .document-item button {
+            padding: 5px 10px; 
+            cursor: pointer; 
+        }
+    </style>
+    </ul>
+
+
+ 
+    
+
+</body>
+</html>
