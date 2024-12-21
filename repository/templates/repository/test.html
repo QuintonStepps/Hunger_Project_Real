@@ -12,6 +12,8 @@
     
 </body>
 </html>
+<!-- Going to add the other field inputs once done with the model
+ also make the button only work if there is a entry in each field-->
 <form action="repository/upload/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="pdf_file" accept="application/pdf">

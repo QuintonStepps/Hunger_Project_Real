@@ -40,7 +40,3 @@ def index(request):
     return render(request, 'repository/index.html', {'documents': documents})
 
 
-def download(request):
-    documents = Document.objects.all()
-    document = documents.get(name="TestDoc.pdf")
-    
