@@ -7,6 +7,6 @@ urlpatterns = [
     #call views home function
     path('',views.test),
     path('repository/upload/',views.upload),
-    path('index/repository/download/',views.download),
+    
     path('index/',views.index),
 ]

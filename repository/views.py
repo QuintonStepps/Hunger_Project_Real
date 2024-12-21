@@ -24,18 +24,23 @@ def upload(request):
         print('uploading file')
     if ('pdf_file' in request.FILES):
         pdf_file = request.FILES['pdf_file']
+        city = request.POST['city']
+        country = request.POST['country']
+        major = request.POST['major']
+        author = request.POST['author']
+        advisor = request.POST['advisor']
+        themes = request.POST['themes']
+        year = request.POST['year']
         
         
-        print(f'Uploaded file name: {pdf_file.name}')
         
-        Document.objects.create(name=pdf_file.name, docfile=pdf_file)
+        Document.objects.create(name=pdf_file.name, docfile=pdf_file, year = year, city = city, country = country, major = major, author = author, advisor = advisor, themes = themes)
         
     return render(request, 'repository/upload.html')
 
 def index(request):
     documents = Document.objects.all()
-    print("Bingo")
-    print(MEDIA_URL)
+    
 
     return render(request, 'repository/index.html', {'documents': documents})
 
