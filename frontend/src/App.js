@@ -1,10 +1,10 @@
 import React from 'react';
-import BasicTable from './BasicTable';
+import ResearchDatabase from './components/ResearchDatabase/ResearchDatabase';
 
 function App() {
   return (
     <div className="App">
-      <BasicTable />
+      <ResearchDatabase />
     </div>
   );
 }
